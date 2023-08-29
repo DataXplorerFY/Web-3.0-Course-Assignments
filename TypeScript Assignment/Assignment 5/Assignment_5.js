@@ -40,16 +40,6 @@ for (var i = 0; i < grades.length; i++) {
 }
 console.log(grades);
 // Write a program that uses a function to find the largest element in an array of numbers
-// function FindLargestNumber(Arr: number[]) {
-//     var max:number=0;
-//     for (Arr[i] = 0; i < Arr.length; i++) {
-//         if(max>i){
-//             max=max+i;
-//         }
-//     }
-//     console.log(max);
-// }
-// FindLargestNumber([20,30,40,50])
 function findMaximum(arr) {
     let max_value = arr[0];
     for (let num of arr) {
@@ -60,6 +50,7 @@ function findMaximum(arr) {
     console.log(max_value);
 }
 findMaximum([10, 20, 30, 40]);
+// Find Minimum Value in Array
 function minvalue(arr1) {
     var min = arr1[0];
     for (let num of arr1) {
