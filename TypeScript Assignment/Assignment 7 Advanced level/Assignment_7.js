@@ -7,7 +7,7 @@ console.log("Hello " + Name + " would you like to learn some Python today?");
 function Greetings(Name) {
     console.log("Hello " + Name + " would you like to learn some Python today?");
 }
-Greetings("Arooj,Javeria");
+Greetings("farhan,Ali");
 //Q3: Name Cases: Store a person’s name in a variable, and then print that person’s name in lowercase, uppercase, and titlecase.
 function titleCase(Name) {
     console.log("Name in upper case: " + Name.toUpperCase());
@@ -332,15 +332,147 @@ console.log(c == d || c < d);
 console.log("*****");
 // e. Test whether an item is in a array
 var arr2 = ["Chocolate", "Sandwich", "Pizza", "burger"];
-if (arr2.includes("PIzza")) {
+if (arr2.includes("Chocolate")) {
     console.log("Chocolate");
 }
 else {
     console.log("item not include");
 }
-// for(let item of arr2){
-//     if(item=="pizza"){
-//         console.log("pizza is in the Array",true);
-//     }
-// }
 // f. Test whether an item is not in a array
+var arr3 = ["Chocolate", "Sandwich", "Pizza", "burger"];
+if (arr3.includes("fries")) {
+    console.log("Chocolate");
+}
+else {
+    console.log("item not include");
+}
+// 25. Alien Colors #1: Imagine an alien was just shot down in a game. Create a variable called alien_color and assign it a value of 'green', 'yellow', or 'red'.
+var alien_color = ["green", "yellow", "red"];
+// a. Write an if statement to test whether the alien’s color is green. If it is, print a message that the player just earned 5 points.
+let color = alien_color.includes("green");
+if (color) {
+    console.log("Player just earned 5 points");
+}
+//b. Write one version of this program that passes the if test and another that fails. (The version that fails will have no output.)
+if (color) {
+    console.log("Test is pass");
+    console.log(color == true);
+}
+else {
+    console.log(false);
+}
+// 26. Alien Colors #2: Choose a color for an alien as you did in Exercise 25, and write an if-else chain.
+var alien_color2 = ["green", "yellow", "red"];
+// a. If the alien’s color is green, print a statement that the player just earned 5 points for shooting the alien.
+let color2 = alien_color2.includes("Green");
+if (color2) {
+    console.log("player just earned 5 points for shooting the alien.");
+    // b. If the alien’s color isn’t green, print a statement that the player just earned 10 points. 
+}
+else {
+    console.log("player just earned 10 points.");
+}
+// 27. Alien Colors #3: Turn your if-else chain from Exercise 5-4 into an if-else chain.
+var alien_color3 = ["green", "yellow", "red"];
+//a. If the alien is green, print a message that the player earned 5 points.
+for (let i = 0; i < alien_color3.length; i++) {
+    if (alien_color3[i] == "green") {
+        console.log(alien_color3[i], "So, player earned 5 points.");
+        //b. If the alien is yellow, print a message that the player earned 10 points.
+    }
+    else if (alien_color3[i] == "yellow") {
+        console.log(alien_color3[i], "So,player earned 10 points.");
+        //c. If the alien is red, print a message that the player earned 15 points.
+    }
+    else if (alien_color3[i] == "red") {
+        console.log(alien_color3[i], "So,player earned 15 points.");
+    }
+}
+// 28. Stages of Life: Write an if-else chain that determines a person’s stage of life. Set a value for the variable age, and then:
+var age = 24;
+// a. If the person is less than 2 years old, print a message that the person is a baby.
+if (age < 2) {
+    console.log("person is baby");
+    // b. If the person is at least 2 years old but less than 4, print a message that the  person is a toddler. 
+}
+else if (age == 2 || age < 4) {
+    console.log("person is a toddler.");
+    // c. If the person is at least 4 years old but less than 13, print a message that the person is a kid.   
+}
+else if (age == 4 || age < 13) {
+    console.log("person is a kid");
+    // d. If the person is at least 13 years old but less than 20, print a message that the person is a teenager.    
+}
+else if (age == 13 || age < 20) {
+    console.log("person is a teenager.");
+    // e. If the person is at least 20 years old but less than 65, print a message that the person is an adult.   
+}
+else if (age == 20 || age < 65) {
+    console.log("person is an adult.");
+    // f. If the person is age 65 or older, print a message that the person is an  elder    
+}
+else if (age >= 65) {
+    console.log("person is an  elder");
+}
+// 29. Favorite Fruit: Make a array of your favorite fruits, and then write a series of independent if statements that check for certain fruits in your array.
+// a. Make a array of your three favorite fruits and call it favorite_fruits.
+var favFruits = ["apple", "banana", "orange", "dates", "kiwi", "grapes"];
+// b. Write five if statements. Each should check whether a certain kind of fruit is in your array. If the fruit is in your array, the if block should print a statement, such as You really like bananas!
+favFruits.map((fruit) => {
+    if (fruit == "apple") {
+        console.log("i like apple it Gives the energy");
+    }
+    else if (fruit == "banana") {
+        console.log("i like banana it Gives the energy ");
+    }
+    else if (fruit == "orange") {
+        console.log("i like orange it Gives the energy ");
+    }
+    else if (fruit == "dates") {
+        console.log("i like dates it Gives the energy ");
+    }
+    else if (fruit == "kiwi") {
+        console.log("i like kiwi it Gives the energy ");
+    }
+    else {
+        console.log("i dont like ");
+    }
+});
+// 30. Hello Admin: Make a array of five or more usernames, including the name 'admin'. Imagine you are writing code that will print a greeting to each user after they log in to a website. Loop through the array, and print a greeting to each user:
+var usernames = ["admin", "farhan", "ali", "asad"];
+// a. If the username is 'admin', print a special greeting, such as Hello admin, would you like to see a status report?
+usernames.map((Names) => {
+    if (Names == "admin") {
+        console.log("HELLO ADMIN would you like to see a status report?");
+        // b. Otherwise, print a generic greeting, such as Hello Eric, thank you for logging in again.     
+    }
+    else if (Names == "farhan") {
+        console.log("Hello", Names, "thank you for logging in again.");
+    }
+    else if (Names == "ali") {
+        console.log("Hello", Names, "thank you for logging in again.");
+    }
+    else if (Names == "asad") {
+        console.log("Hello", Names, "thank you for logging in again.");
+    }
+});
+console.log(".........******");
+// by using for loop
+for (let i = 0; i < usernames.length; i++) {
+    if (usernames[i] == "admin") {
+        console.log("HELLO ", usernames[i], "would you like to see a status report?");
+    }
+    else {
+        console.log("Hello", usernames[i], "thank you for logging in again.");
+    }
+}
+// 31. No Users: Add an if test to Exercise 28 to make sure the list of users is not empty.
+var users = ["Farhan", "Ali", "Asad", "Hassan"];
+// a. Remove all of the usernames from your array, and make sure the correct message is printed.
+while (users.length > 0) {
+    users.pop();
+}
+if (users.length == 0) {
+    console.log("We Need some users!");
+}
+// b. If the list is empty, print the message We need to find some users!
