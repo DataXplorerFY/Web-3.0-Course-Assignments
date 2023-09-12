@@ -590,13 +590,88 @@ for (let i = 0; i < usernames.length; i++) {
 var users: string[] = ["Farhan", "Ali", "Asad", "Hassan"]
 // a. Remove all of the usernames from your array, and make sure the correct message is printed.
 
-while(users.length>0){
+while (users.length > 0) {
     users.pop()
 }
 // b. If the list is empty, print the message We need to find some users!
-if(users.length==0){
+if (users.length == 0) {
     console.log("We Need some users!");
-    
+
 }
 
 
+// 32. Checking Usernames: Do the following to create a program that simulates how websites ensure that everyone has a unique username. 
+
+// a. Make a list of five or more usernames called current_users.
+
+var current_users: string[] = ["Farhan", "Talha", "Hanan", "Asad", "Ali"]
+
+// b. Make another list of five usernames called new_users. Make sure one or two of the new usernames are also in the current_users list.
+
+var new_users: string[] = ["Zohaib", "Ahmed", "Shehriyaar", "Sami", "Farhan", "Hanan"]
+
+// c. Loop through the new_users list to see if each new username has already been used. If it has, print a message that the person will need to enter a new username. If a username has not been used, print a message saying that the username is available.
+
+for (var i = 0; i < new_users.length; i++) {
+
+    if (current_users.includes(new_users[i])) {
+        console.log(new_users[i], "Sorry, the username is already in use.");
+    } else {
+        console.log(new_users[i], "Congratulations! The username is available.");
+    }
+}
+
+
+// 33. Ordinal Numbers: Ordinal numbers indicate their position in a array, such as 1st or 2nd. Most ordinal numbers end in th, except 1, 2, and 3.
+
+
+
+// a. Store the numbers 1 through 9 in a array.
+
+var ordinalNum: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+// c. Use an if-else chain inside the loop to print the proper ordinal ending for each number. Your output should read "1st 2nd 3rd 4th 5th 6th 7th 8th 9th", and each result should be on a separate line.
+
+for (let i = 0; i < ordinalNum.length; i++) {
+    if (ordinalNum[i] == 1) {
+        console.log(ordinalNum[i]);
+
+    } else if (ordinalNum[i] == 2) {
+        console.log(ordinalNum[i]);
+    } else if (ordinalNum[i] == 3) {
+        console.log(ordinalNum[i]);
+    } else {
+        console.log(ordinalNum[i] + "th");
+
+    }
+}
+
+// 34. Pizzas: Think of at least three kinds of your favorite pizza. Store these pizza names in a array, and then use a for loop to print the name of each pizza.
+
+var pizzas: string[] = ["chicken fajita", "behari kabbab", "malai boti"]
+
+for (let i = 0; i < pizzas.length; i++) {
+    console.log(pizzas[i]);
+
+}
+// a. Modify your for loop to print a sentence using the name of the pizza instead of printing just the name of the pizza. For each pizza you should have one line of output containing a simple statement like I like pepperoni pizza.
+var pizzas: string[] = ["chicken fajita", "behari kabbab", "malai boti"]
+
+for (let i = 0; i < pizzas.length; i++) {
+    console.log("i like", pizzas[i], "pizza");
+
+}
+console.log("Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fired oven");
+
+
+
+
+// 35. Animals: Think of at least three different animals that have a common characteristic. Store the names of these animals in a list, and then use a for loop to print out the name of each animal. • Modify your program to print a statement about each animal, such as A dog would make a great pet. • Add a line at the end of your program stating what these animals have in common. You could print a sentence such as Any of these animals would make a great pet!
+var animals: string[] = ["Dog", "parriot", "Sparrow"]
+
+for (let i = 0; i < animals.length; i++) {
+    console.log("A", animals[i], " would make a great pet");
+
+}
+console.log("Any of these animals would make a great pet!");
