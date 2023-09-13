@@ -675,3 +675,113 @@ for (let i = 0; i < animals.length; i++) {
 
 }
 console.log("Any of these animals would make a great pet!");
+
+
+// 36. T-Shirt: Write a function called make_shirt() that accepts a size and the text of a message that should be printed on the shirt. The function should print a sentence summarizing the size of the shirt and the message printed on it. Call the function.
+function make_shirt(size: number, message: string) {
+    console.log("your size of T-shirt is", size, "and printed text is", message);
+
+}
+
+make_shirt(23, "Hello World");
+
+// 37. Large Shirts: Modify the make_shirt() function so that shirts are large by default with a message that reads I love TypeScript. Make a large shirt and a medium shirt with the default message, and a shirt of any size with a different message.
+
+function make_shirt2(size: string = "Large", message: string = "I love TypeScript") {
+    console.log(`Your size of T-shirt is ${size} and printed text is "${message}"`);
+}
+
+
+make_shirt2();
+
+make_shirt2("Medium");
+
+make_shirt2("Small", "Hello, World!");
+
+
+// 38. Cities: Write a function called describe_city() that accepts the name of a city and its country. The function should print a simple sentence, such as Karachi is in Pakistan. Give the parameter for the country a default value. Call your function for three different cities, at least one of which is not in the default country.
+
+
+
+function describe_city(city: string, country: string = "Pakistan") {
+    console.log(city, "is in", country);
+
+}
+describe_city("lahore")
+describe_city("New York", "USA");
+
+// 39. City Names: Write a function called city_country() that takes in the name of a city and its country. The function should return a string formatted like this: "Lahore, Pakistan" Call your function with at least three city-country pairs, and print the value that’s returned.
+
+
+function city_country(city: string, country: string) {
+    console.log('"' + city + ",", country + '"');
+
+}
+
+city_country("Faisalabd", "Pakistan")
+city_country("Lahore", "Pakistan")
+city_country("Islamabad", "Pakistan")
+
+// 40. Album: Write a function called make_album() that builds a Object describing a music album. The function should take in an artist name and an album title, and it should return a Object containing these two pieces of information. Use the function to make three dictionaries representing different albums. Print each return value to show that Objects are storing the album information correctly. Add an optional parameter to make_album() that allows you to store the number of tracks on an album. If the calling line includes a value for the number of tracks, add that value to the album’s Object. Make at least one new function call that includes the number of tracks on an album.
+
+
+function make_album(artist_name: string, album_title: string) {
+
+    const album1 = {
+        title: "Tum Bin",
+        artist: "Farhan",
+        album: ["Song1", "song2", "song3", "song4"]
+    }
+
+    if (artist_name == album1.artist && album_title == album1.title) {
+        console.log(album1);
+
+    }
+
+}
+
+make_album("Farhan", "album1")
+
+function albums(title: string, artist: string) {
+    const album2 = {
+        title: "Tum Bin",
+        artist: "Farhan",
+        album: ["Song1", "song2", "song3", "song4"]
+    }
+    const album3 = {
+        title: "simplicity",
+        artist: "Farhan",
+        album: ["Song1", "song2", "song3", "song4"]
+    }
+    const album4 = {
+        title: "Innocent",
+        artist: "Farhan",
+        album: ["Song1", "song2", "song3", "song4"]
+    }
+
+    if (title == album2.title && artist == album2.artist) {
+        console.log(album2);
+
+    } else if (title == album3.title && artist == album3.artist) {
+        console.log(album3);
+
+    } else if (title == album4.title && artist == album4.artist) {
+        console.log(album4);
+
+    }
+
+}
+
+albums("Innocent", "Farhan")
+
+function make_new_album(songs: string[]) {
+    let new_album = {
+        title: "Tears",
+        artist: "Farhan",
+        songs: songs
+    };
+    songs.push(...new_album.songs); 
+    console.log(new_album); 
+}
+
+make_new_album(["s1", "s2", "s3"]); // Call the function with an array of songs
