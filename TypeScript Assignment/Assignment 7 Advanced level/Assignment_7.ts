@@ -26,7 +26,7 @@ function titleCase(Name: string) {
 
 titleCase("farhan Ali")
 
-// Q3 Famous Quote: Find a quote from a famous person you admire. Print the quote
+// Q4 Famous Quote: Find a quote from a famous person you admire. Print the quote
 // and the name of its author. Your output should look something like the following,
 // including the quotation marks:
 
@@ -58,7 +58,7 @@ console.log(stripName);
 const NewName: string = stripName.trim()
 console.log(NewName);
 
-// Q7 Number Eight: Write addition, subtraction, multiplication, and division operations
+// Q7+ Q8 Number Eight: Write addition, subtraction, multiplication, and division operations
 // that each result in the number 8. Be sure to enclose your operations in print
 // statements to see the results.
 
@@ -69,13 +69,14 @@ console.log(4 * 2);
 console.log(16 / 2);
 
 
-// Q8 Favorite Number: Store your favorite number in a variable. Then, using that
-// variable, create a message that reveals your favorite number. Print that message.
+// Q9 Favorite Number: Store your favorite number in a variable. Then, using that variable, create a message that reveals your favorite number. Print that message.
 
 var FavNum: number = 5;
 var message: string = "Your Favourite number is";
 // it will combine both of above two variables and print message
 console.log(message, " ", FavNum);
+
+// Question 10 related to comments so i have added comments in the above questions
 
 
 // Q11 Names: Store the names of a few of your friends in a array called names. Print each person’s name by accessing each element in the list, one at a time.
@@ -147,8 +148,8 @@ for (let i = 0; i < Guest.length; i++) {
 
 }
 console.log("Sidra cannot join us in the party");
-
-
+// 15. Changing Guest List: You just heard that one of your guests can’t make the dinner, so you need to send out a new set of invitations. You’ll have to think of someone else to invite.
+            // functinality includein next function
 // Q16. More Guests: You just found a bigger dinner table, so now more space is
 // available. Think of three more guests to invite to dinner.
 // a. Start with your program from Exercise 15. Add a print statement to the end of
@@ -778,10 +779,86 @@ function make_new_album(songs: string[]) {
     let new_album = {
         title: "Tears",
         artist: "Farhan",
-        songs: songs
+        songs: songs,
     };
-    songs.push(...new_album.songs); 
-    console.log(new_album); 
+    songs.push(...new_album.songs);
+    console.log(new_album);
 }
 
-make_new_album(["s1", "s2", "s3"]); // Call the function with an array of songs
+make_new_album(["s1", "s2", "s3"]);
+
+// 41. Magicians: Make a array of magician’s names. Pass the array to a function called show_magicians(), which prints the name of each magician in the array
+var magician_names: string[] = ["Ali", "Asad", "Alina", "David"];
+function show_magicians(magician: string[]) {
+    for (let i = 0; i < magician.length; i++) {
+        console.log(magician[i]);
+
+
+    }
+}
+show_magicians(magician_names)
+console.log("**********");
+
+// 42. Great Magicians: Start with a copy of your program from Exercise 39. Write a function called make_great() that modifies the array of magicians by adding the phrase the Great to each magician’s name. Call show_magicians() to see that the list has actually been modified.
+
+var magician_names: string[] = ["Ali", "Asad", "Alina", "David"];
+function make_great(magician: string) {   
+
+    for (let i = 0; i < magician_names.length; i++) {
+        console.log(magician + magician_names[i]);
+   }  
+}
+
+make_great("Great ")
+
+// 43. Unchanged Magicians: Start with your work from Exercise 40. Call the function make_great() with a copy of the array of magicians’ names. Because the original array will be unchanged, return the new array and store it in a separate array. Call show_magicians() with each array to show that you have one array of the original names and one array with the Great added to each magician’s name.
+
+var magician_names: string[] = ["Ali", "Asad", "Alina", "David"];
+function make_great1(magician: string="Great") {
+    console.log("magician name with great ");
+    for (let i = 0; i < magician_names.length; i++) {
+        console.log(magician + magician_names[i]);
+    }
+    console.log("origional magician name");
+    var copy_magician_name: string[] = [...magician_names];
+    console.log(copy_magician_name);
+}
+
+make_great1()
+
+// 44. Sandwiches: Write a function that accepts a array of items a person wants on a sandwich. The function should have one parameter that collects as many items as the function call provides, and it should print a summary of the sandwich that is being ordered. Call the function three times, using a different number of arguments each time.
+
+function sandwich_order(items:string[]){
+    console.log("*** Summary of your order ***");
+    for(let i=0;i<items.length;i++){
+        console.log(items[i]);        
+    }    
+}
+
+sandwich_order(["Sandwich1","potato Sandwich","Chicken Sandwich"])
+sandwich_order(["Simple_Sandwich","egg_Sandwich","Egg Potato_Sandwich"])
+sandwich_order(["SANDWICH111","SANDWICH222","SANDWICH333"])
+
+// 45. Cars: Write a function that stores information about a car in a Object. The function should always receive a manufacturer and a model name. It should then accept an arbitrary number of keyword arguments. Call the function with the required information and two other name-value pairs, such as a color or an optional feature. Print the Object that’s returned to make sure all the information was stored correctly
+
+
+function Cars1(company: string = "Honda", model: number = 2024, ...args: any[]) {
+    let car_object: any = {
+        Company: company,
+        Model: model,
+    };
+
+    
+    for (let i = 0; i < args.length; i += 2) {
+        const name: string = args[i];
+        const value: any = args[i + 1];
+        car_object[name] = value;
+    }
+
+    console.log(car_object);
+}
+
+
+Cars1("Suzuki", 2020, "Color", "Red", "Price", 2500000, "Engine", "8000cc");
+Cars1("Honda", 2023, "Color", "Blue");
+Cars1("Audi", 2024, "Color", "Silver", "OptionalFeature", "Sunroof");
