@@ -1,10 +1,7 @@
 import { log } from "console";
 import inquirer from "inquirer";
-// For User Input
-
-
-
-let userInput = await inquirer.prompt([{
+// For User Input (Account number and password)
+let userInput: { accountnumber: number, accountPassword: number } = await inquirer.prompt([{
     type: "input",
     name: "accountNumber",
     message: "Enter Your 16 Digit Account Number!",
@@ -32,15 +29,60 @@ let userInput = await inquirer.prompt([{
 ])
 console.log("THANK YOU FOR LOGGING IN AGAIN")
 
-var previousTransection: number[] = [] // Stores The previous Transections
+var accountBalance: number = 100;
+
+// balance update functionality
+async function updateBalance() {
+    let balanceUpdation: { balanceUpdate: number } = await inquirer.prompt({
+        type: "input",
+        name: "balanceUpdate",
+        message: "Enter the Amount you want to add in your account balance!",
+        validate: (ans) => {
+            if (!ans) {
+                return "Please Enter an amount!";
+            }
+            return true;
+        }
+    });
+
+    accountBalance = accountBalance + parseFloat(balanceUpdation.balanceUpdate.toString());
+    console.log("Your Updated Balance is ", accountBalance);
+}
+
+// furthur options functionality
+async function furtherOpt() {
+    let furtherOptions: { endTransection: string } = await inquirer.prompt([{
+        type: "list",
+        name: "endTransection",
+        message: "Do You Want to Perfom Another Transection ?",
+        choices: ["YES!", "NO"],
+        validate: (ans) => {
+            if (!ans) {
+                return "Select The options"
+            }
+            return true
+        }
+    }])
+
+    if (furtherOptions.endTransection == "NO") {
+        console.log("THANK YOU! Your Transection is Ended!")
+    } else {
+        await performTransections()
+    }
+}
+
+
+// Stores The previous Transections
+var previousTransection: number[] = [] 
+
 
 async function performTransections() {
 
-    let userInput1 = await inquirer.prompt({
+    let userInput1: { transectionOptions: string } = await inquirer.prompt({
         type: "list",
         name: "transectionOptions",
         message: "Select the Option you want to perform!",
-        choices: ["Check Account Balance", "Cash WithDrawl", "Check your Previous Transections"],
+        choices: ["Check Account Balance", "Cash WithDrawl", "Check your Previous Transections", "Add Balance"],
         validate: (ans) => {
             if (!ans) {
                 return "Please Select The Option!";
@@ -51,26 +93,11 @@ async function performTransections() {
     )
 
     if (userInput1.transectionOptions == "Check Account Balance") {
-        var accountBalance: number = 100;
-        console.log("WELCOME BACK! Your Account Balance is ", accountBalance);
-        let furtherOptions = await inquirer.prompt([{
-            type: "list",
-            name: "endTransection",
-            message: "Do You Want to Perfom Another Transection ?",
-            choices: ["YES!", "NO"],
-            validate: (ans) => {
-                if (!ans) {
-                    return "Select The options"
-                }
-                return true
-            }
-        }])
 
-        if (furtherOptions.endTransection == "NO") {
-            console.log("THANK YOU! Your Transection is Ended!")
-        } else {
-            await performTransections()
-        }
+        console.log("WELCOME BACK! Your Account Balance is ", accountBalance);
+        furtherOpt();
+
+
 
     } else if (userInput1.transectionOptions == "Cash WithDrawl") {
         let cash: { amountWithdrawl: number } = await inquirer.prompt({
@@ -91,49 +118,24 @@ async function performTransections() {
         previousTransection.push(cash.amountWithdrawl);
 
         console.log(cash.amountWithdrawl, "Has Been Successfully WithDrawl!");
+        accountBalance = accountBalance - cash.amountWithdrawl
+        console.log("Your remaining balance is ", accountBalance);
 
-        let furtherOptions = await inquirer.prompt([{
-            type: "list",
-            name: "endTransection",
-            message: "Do You Want to Perfom Another Transection ?",
-            choices: ["YES!", "NO"],
-            validate: (ans) => {
-                if (!ans) {
-                    return "Select The options"
-                }
-                return true
-            }
 
-        }])
-        if (furtherOptions.endTransection == "NO") {
-            console.log("THANK YOU! Your Transection is Ended!")
-        } else {
-            await performTransections()
-        }
+        furtherOpt();
+
     } else if (userInput1.transectionOptions == "Check your Previous Transections") {
 
         for (let i = 0; i < previousTransection.length; i++) {
             console.log("Your previous Transection are: ", previousTransection[i])
 
         }
-        let furtherOptions = await inquirer.prompt([{
-            type: "list",
-            name: "endTransection",
-            message: "Do You Want to Perfom Another Transection ?",
-            choices: ["YES!", "NO"],
-            validate: (ans) => {
-                if (!ans) {
-                    return "Select The options"
-                }
-                return true
-            }
+        furtherOpt()
 
-        }])
-        if (furtherOptions.endTransection == "NO") {
-            console.log("THANK YOU! Your Transection is Ended!")
-        } else {
-            await performTransections()
-        }
+    } else if (userInput1.transectionOptions == "Add Balance") {
+        await updateBalance()
+        furtherOpt()
+
 
     }
 
