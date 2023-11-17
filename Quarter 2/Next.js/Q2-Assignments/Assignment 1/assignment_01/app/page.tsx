@@ -34,7 +34,7 @@ export default function Home() {
 
   };
 
-  
+
 
   const headings: CSSProperties = {
     fontSize: '25px',
@@ -70,6 +70,42 @@ export default function Home() {
     color: '#159957',
     fontSize: '20px',
   };
+  const contactus: CSSProperties = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'green',
+
+
+  };
+  const form: CSSProperties = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'green',
+
+
+  };
+  const container: CSSProperties = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+
+
+  };
+  const contentcontent: CSSProperties = {
+    width: '60%', // Adjust the width of your content area
+    textAlign: 'left',
+    textDecoration: 'none'
+  };
+  const textarea: CSSProperties = {
+    width: '800px',
+    height: '30px',
+    border: '2px solid green',
+    borderRadius: '7px'
+  };
+
 
   return (
 
@@ -702,6 +738,59 @@ export default function Home() {
               </ul>
 
             </ol>
+            <br />
+            <h2 style={headings_h2}>PIAIC Quarter 3 Result of Artificial Intelligence</h2>
+
+            <table border={1} style={{ width: '80%', margin: 'auto', borderCollapse: 'collapse' }}>
+              <thead>
+                <tr>
+                  <th colSpan={6} style={{ textAlign: 'center' }}>Students Grades</th>
+                </tr>
+                <tr>
+                  <th>Programs</th>
+                  <th>A</th>
+                  <th>B</th>
+                  <th>C</th>
+                  <th>D</th>
+                  <th>F</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Artificial Intelligance</td>
+                  <td>113</td>
+                  <td>207</td>
+                  <td>110</td>
+                  <td>88</td>
+                  <td>148</td>
+                </tr>
+                <tr>
+                  <td>Cloud Native</td>
+                  <td>104</td>
+                  <td>104</td>
+                  <td>104</td>
+                  <td>103</td>
+                  <td>102</td>
+                </tr>
+                <tr>
+                  <td>IOT</td>
+                  <td>101</td>
+                  <td>90</td>
+                  <td>104</td>
+                  <td>67</td>
+                  <td>56</td>
+                </tr>
+                <tr>
+                  <td>BlockChain</td>
+                  <td>15</td>
+                  <td>104</td>
+                  <td>103</td>
+                  <td>101</td>
+                  <td>110</td>
+                </tr>
+              </tbody>
+            </table>
 
 
 
@@ -727,6 +816,43 @@ export default function Home() {
         </div>
 
       </div>
+
+      <h2 style={contactus}>Contact Us</h2>
+      <div style={container} >
+
+        <div className="form" style={contentcontent}>
+          <form action="" >
+
+            <label htmlFor="name">First Name:</label><br />
+            <input style={textarea} type="text" id="name" name="name" placeholder='Enter Your Name Here!' required />
+
+            <br />
+            <br />
+            <label htmlFor="name">Last Name:</label><br />
+            <input style={textarea} type="text" id="name" name="name" placeholder='Enter Your Name Here!' required />
+            <br />
+            <br />
+            <label htmlFor="email">Email:</label><br />
+            <input style={textarea} type="email" id="email" name="email" placeholder='Enter Your Email!' required />
+            <br />
+            <br />
+            <label htmlFor="subject">Subject:</label><br />
+            <input style={textarea} type="text" id="subject" name="subject" placeholder='Subject' required />
+            <br />
+            <br />
+            <label htmlFor="message">Message:</label><br />
+            <textarea style={textarea} id="message" name="message" placeholder='Enter Your Message Here!' required></textarea>
+            <br />
+            <br />
+
+            <button style={textarea} type="submit">Submit</button><br />
+            <br />
+            <br />
+
+          </form>
+        </div>
+      </div>
+
 
 
     </main>
