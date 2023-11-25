@@ -1,6 +1,12 @@
-import Image from 'next/image'
 
-export default function blog() {
+
+"use client";
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react';
+import Head from 'next/head';
+
+function blog() {
     return (
         <main>
             <section className="Sub-header">
@@ -10,16 +16,17 @@ export default function blog() {
                     </a>
                     <div className="nav-links" id="navLinks">
                         {/* reposnive bar open and close  */}
-                        <i className="fa fa-times"></i>
+                        <i className="fa fa-times" ></i>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="course.html">Course</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/courses">Courses</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/about">About</a></li>
+
                         </ul>
                     </div>
-                    <i className="fa fa-bars"></i>
+                    <i className="fa fa-bars" ></i>
                     {/* reposnive bar open and close  */}
                 </nav>
                 <h1>Our Post</h1>
@@ -107,3 +114,4 @@ export default function blog() {
 
     )
 }
+export default blog

@@ -1,8 +1,10 @@
+"use client";
 import Image from 'next/image'
 import Link from 'next/link'
-import courses from './courses/page';
+import React from 'react';
+import Head from 'next/head';
 
-export default function Home() {
+function Home() {
   return (
 
     <main>
@@ -10,33 +12,24 @@ export default function Home() {
 
       <section className='header'>
         <nav>
-          <a href="index.html" className="logo">Xplore
+          <a href="page.tsx" className="logo">Xplore
             <i className="fab fa-staylinked"></i>kill
           </a>
           <div className="nav-links" id="navLinks">
             {/* Reposnive bar open and close  */}
-            <i className="fa fa-times" ></i>
+            <i className="fa fa-times" onClick={() => { }} />
             <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/courses">Courses</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/about">About</a></li>
 
-              {/* <li><Link href={"/"}> Home </Link></li>
-              <li><Link href={'app/courses'}>Courses</Link></li>
-              <li><Link href={'app/blog'}>Blog</Link> </li>
-              <li><Link href={'app/about'}>About</Link>  </li>
-              <li><Link href={'app/contact'}>Contact</Link>  </li> */}
-              <li><Link href="/app"><a>Home</a></Link></li>
-              <li><Link href="/courses/"><a>Courses</a></Link></li>
-              <li><Link href="/blog/"><a>Blog</a></Link></li>
-              <li><Link href="/about/"><a>About</a></Link></li>
-              <li><Link href="/contact/"><a>Contact</a></Link></li>
-                
-                  
-                
-              
-              
+
 
             </ul>
           </div>
-          <i className="fa fa-bars" ></i>
+          <i className="fa fa-bars" onClick={() => { }} />
           {/*  Reposnive bar open and close  */}
         </nav>
 
@@ -238,3 +231,4 @@ export default function Home() {
 
   );
 }
+export default Home
