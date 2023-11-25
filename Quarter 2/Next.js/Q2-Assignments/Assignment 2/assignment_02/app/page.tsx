@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import courses from './courses/page';
 
 export default function Home() {
   return (
@@ -15,11 +17,23 @@ export default function Home() {
             {/* Reposnive bar open and close  */}
             <i className="fa fa-times" ></i>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="course.html">Course</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
+
+              {/* <li><Link href={"/"}> Home </Link></li>
+              <li><Link href={'app/courses'}>Courses</Link></li>
+              <li><Link href={'app/blog'}>Blog</Link> </li>
+              <li><Link href={'app/about'}>About</Link>  </li>
+              <li><Link href={'app/contact'}>Contact</Link>  </li> */}
+              <li><Link href="/app"><a>Home</a></Link></li>
+              <li><Link href="/courses/"><a>Courses</a></Link></li>
+              <li><Link href="/blog/"><a>Blog</a></Link></li>
+              <li><Link href="/about/"><a>About</a></Link></li>
+              <li><Link href="/contact/"><a>Contact</a></Link></li>
+                
+                  
+                
+              
+              
+
             </ul>
           </div>
           <i className="fa fa-bars" ></i>
@@ -197,19 +211,19 @@ export default function Home() {
 
       <section className="footer">
         <hr />
-          <h4>About Us</h4>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse minima incidunt odio nam facilis, eligendi
-            Itaque fugiat cupiditate consectetur. Aliquid ab deserunt exercitationem, illum molestiae dolorem.
-          </p>
+        <h4>About Us</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse minima incidunt odio nam facilis, eligendi
+          Itaque fugiat cupiditate consectetur. Aliquid ab deserunt exercitationem, illum molestiae dolorem.
+        </p>
 
-          <div className="icons">
-            <i className="fab fa-facebook-f"></i>
-            <i className="fab fa-instagram"></i>
-            <i className="fab fa-twitter"></i>
-            <i className="fab fa-linkedin"></i>
-          </div>
-          <p>Made with <i className="fas fa-heart"></i> by <a href="index.html">Sagar Developer</a></p>
-          <p>Copyright © 2021 <a href="index.html">Xplore Skill</a>. All Rights Reserved</p>
+        <div className="icons">
+          <i className="fab fa-facebook-f"></i>
+          <i className="fab fa-instagram"></i>
+          <i className="fab fa-twitter"></i>
+          <i className="fab fa-linkedin"></i>
+        </div>
+        <p>Made with <i className="fas fa-heart"></i> by <a href="index.html">Sagar Developer</a></p>
+        <p>Copyright © 2021 <a href="index.html">Xplore Skill</a>. All Rights Reserved</p>
       </section>
 
 
