@@ -1,4 +1,8 @@
+"use client";
 import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react';
+import Head from 'next/head';
 
 export default function Home() {
   return (
@@ -8,8 +12,8 @@ export default function Home() {
       <nav className="navbar background h-nav">
         <ul className="nav-list v-class">
           <div className="logo"><img src="img/logo1.png" alt="logo" /></div>
-          <li><a href="#Home"> Home </a></li>
-          <li><a href="#Blogs"> Blogs </a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/Blogs"> Blogs </a></li>
 
         </ul>
         <div className="rightNav v-class">

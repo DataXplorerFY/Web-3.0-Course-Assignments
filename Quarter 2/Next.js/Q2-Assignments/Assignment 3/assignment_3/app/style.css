@@ -213,6 +213,20 @@
     margin: 5px 3px;
 }
 
+
+/* Blog page */
+.background1 {
+    background: rgba(12, 9, 20, 0.7) url("../public/img/ronaldo.jpeg");
+    background-size: cover;
+    background-blend-mode: color-burn;
+}
+
+.firstsection1 {
+    height: 100vh;
+}
+
+
+
 @media only screen and (max-width:1140px){
 .nav-list{
     flex-direction: column;
