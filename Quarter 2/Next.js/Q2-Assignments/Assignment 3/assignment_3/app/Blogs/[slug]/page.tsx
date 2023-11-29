@@ -16,6 +16,11 @@ const blogData = [{
     id : 2,
     title : "Unleashing Creativity and Precision",
     description: "This is "
+},
+{
+    id : 3,
+    title : "Unleashing Creativity and Precision",
+    description: "This is "
 }
 ]
 
@@ -66,10 +71,10 @@ export default function blogs({params}: {params:{title:string}}) {
 
             <section className="section secleft">
                 
-                <div className="paras">
+                <div className="paras" >
                 
                     <p className="sectiontag text-big">
-                        <h2>{selectBlog[0]?.description}Navigators of Code: Unleashing Creativity and Precision</h2>
+                        <h2>Navigators of Code: Unleashing Creativity and Precision</h2>
                     </p>
                     <p className="sectionsubtag text-small">Programmers, the architects of digital innovation, blend creativity
                         with precision to craft intricate software solutions. Their systematic problem-solving and

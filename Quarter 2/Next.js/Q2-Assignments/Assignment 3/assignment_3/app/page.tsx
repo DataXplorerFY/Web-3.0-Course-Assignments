@@ -13,7 +13,7 @@ export default function Home() {
         <ul className="nav-list v-class">
           <div className="logo"><img src="img/logo1.png" alt="logo" /></div>
           <li><a href="/">Home</a></li>
-          <li><a href="/Blogs"> Blogs </a></li>
+          <li><a href="/Blogs/slug"> Blogs </a></li>
 
         </ul>
         <div className="rightNav v-class">
