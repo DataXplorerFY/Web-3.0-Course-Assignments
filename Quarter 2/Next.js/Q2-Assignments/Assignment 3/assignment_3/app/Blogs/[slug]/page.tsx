@@ -26,6 +26,11 @@ const blogData = [{
     id : 4,
     title : "Unleashing Creativity and Precision",
     description: "This is "
+},
+{
+    id : 5,
+    title : "Unleashing Creativity and Precision",
+    description: "This is "
 }
 ]
 
